@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hideyuki Portfolio</title>
+    <meta name="description" content="Portfolio Template for Developer" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <span class="header__logo-sub">Hideyuki Takahashi</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#sobre" class="header__link">Sobre </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projetos" class="header__link"> Projetos </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#sobre"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projetos"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="home-hero">
+      <div class="home-hero__content">
+        <h1 class="heading-primary">Hideyuki Takahashi</h1>
+        <h2 class="heading-secondary">Fullstack Developer</h2>
+        <div class="home-hero__info">
+          <p class="text-primary">
+            Apaixonado por resolver problemas com código, desenvolvo soluções usando Java, Spring
+            Boot, Node.js e Angular. Estou sempre em busca de evolução e boas práticas para criar
+            aplicações eficientes e seguras.
+          </p>
+        </div>
+        <div class="home-hero__cta">
+          <a href="./index.html#projetos" class="btn btn--bg">Projetos</a>
+        </div>
+      </div>
+      <div class="home-hero__socials">
+        <div class="home-hero__social">
+          <a href="https://wa.me/5511942051849" class="home-hero__social-icon-link" target="_blank">
+            <img src="./assets/png/whatssap-ico.png" alt="icon" class="home-hero__social-icon" />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a
+            href="https://www.linkedin.com/in/dev-hideyukitakahashi/"
+            class="home-hero__social-icon-link"
+            target="_blank"
+          >
+            <img src="./assets/png/linkedin-ico.png" alt="icon" class="home-hero__social-icon" />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a
+            href="https://github.com/Dev-HideyukiTakahashi"
+            class="home-hero__social-icon-link"
+            target="_blank"
+          >
+            <img src="./assets/png/github-ico.png" alt="icon" class="home-hero__social-icon" />
+          </a>
+        </div>
+      </div>
+      <div class="home-hero__mouse-scroll-cont">
+        <div class="mouse"></div>
+      </div>
+    </section>
+    <section id="sobre" class="about sec-pad">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-med">
+          <span class="heading-sec__main">Sobre Mim</span>
+          <span class="heading-sec__sub">
+            Transformando desafios em soluções inovadoras através da tecnologia.
+          </span>
+        </h2>
+        <div class="about__content">
+          <div class="about__content-main">
+            <h3 class="about__content-title">Conheça-me!</h3>
+            <div class="about__content-details">
+              <p class="about__content-details-para">
+                Olá, meu nome é <strong>Hideyuki Takahashi</strong> e sou um
+                <strong>Full Stack Developer</strong> residente em São Paulo - Diadema. Estou em
+                constante desenvolvimento na minha carreira como desenvolvedor de software e,
+                atualmente, estou trabalhando em projetos pessoais, os quais podem ser conferidos no
+                meu
+                <strong
+                  ><a target="_blank" href="https://github.com/Dev-HideyukiTakahashi"
+                    >GitHub</a
+                  > </strong
+                >, demonstrando minha capacidade de aplicar soluções eficazes e inovadoras
+              </p>
+              <p class="about__content-details-para">
+                Embora tenha experiência tanto em backend quanto em frontend, minha verdadeira
+                paixão está no desenvolvimento <strong>backend</strong>, especialmente com
+                <strong>Java e Spring Boot.</strong>
+              </p>
+              </p>
+            </div>
+            <a target="_blank" href="./curriculo/index.html" class="btn btn--med btn--theme dynamicBgClr">Currículo Online</a>
+          </div>
+          <div class="about__content-skills">
+            <h3 class="about__content-title">Skills</h3>
+            <div class="skills">
+              <li class="skills__skill btn btn--plain">HTML</li>
+              <li class="skills__skill btn btn--plain">CSS</li>
+              <li class="skills__skill btn btn--plain">SCSS</li>
+              <li class="skills__skill btn btn--plain">Tailwind CSS</li>
+              <li class="skills__skill btn btn--plain">JavaScript</li>
+              <li class="skills__skill btn btn--plain">TypeScript</li>
+              <li class="skills__skill btn btn--plain">Angular</li>
+              <li class="skills__skill btn btn--plain">Java</li>
+              <li class="skills__skill btn btn--plain">Springboot</li>
+              <li class="skills__skill btn btn--plain">JSP</li>
+              <li class="skills__skill btn btn--plain">Node.js</li>
+              <li class="skills__skill btn btn--plain">Nest.js</li>
+              <li class="skills__skill btn btn--plain">MySQL</li>
+              <li class="skills__skill btn btn--plain">PostgreSQL</li>
+              <li class="skills__skill btn btn--plain">MongoDB</li>
+              <li class="skills__skill btn btn--plain">Docker</li>
+              <li class="skills__skill btn btn--plain">Swagger</li>
+              <li class="skills__skill btn btn--plain">Jest</li>
+              <li class="skills__skill btn btn--plain">JUnit</li>
+              <li class="skills__skill btn btn--plain">Mockito</li>
+              <li class="skills__skill btn btn--plain">Microservices</li>
+              <li class="skills__skill btn btn--plain">Scrum</li>
+              <li class="skills__skill btn btn--plain">Kanban</li>
+              <li class="skills__skill btn btn--plain">Git</li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projetos" class="projects sec-pad">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-bg">
+          <span class="heading-sec__main">Projetos</span>
+          <span class="heading-sec__sub">
+            Aqui estão alguns projetos que desenvolvi, demonstrando minha experiência e habilidades
+            em programação. Cada projeto reflete meu compromisso com a qualidade e a inovação.
+          </span>
+        </h2>
+
+        <div class="projects__content">
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Dental Care</h3>
+              <p class="projects__row-content-desc">
+                O sistema permite que pacientes agendem, cancelem e avaliem consultas, dentistas
+                gerenciem suas agendas e administradores controlem usuários e visualizem relatórios.
+              </p>
+              <a
+                href="projects/project-1.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                >Ver Detalhes</a
+              >
+            </div>
+          </div>
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Projeto em Construção</h3>
+              <p class="projects__row-content-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis tempora,
+                explicabo quae quod deserunt eius sapiente praesentium.
+              </p>
+              <a
+                href="projects/project-2.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                >Ver Detalhes</a
+              >
+            </div>
+          </div>
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Projeto em Construção</h3>
+              <p class="projects__row-content-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis tempora,
+                explicabo quae quod deserunt eius sapiente praesentium.
+              </p>
+              <a
+                href="projects/project-3.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                >Ver Detalhes</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://wa.me/5511942051849">
+                <img class="main-footer__icon" src="./assets/png/whatssap-ico.png" alt="icon" />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.linkedin.com/in/dev-hideyukitakahashi/"
+              >
+                <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="icon" />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/Dev-HideyukiTakahashi">
+                <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="icon" />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Hideyuki Takahashi</h4>
+            <p class="main-footer__short-desc">
+              Desenvolvedor Full Stack com foco em soluções eficientes e escaláveis.
+            </p>
+          </div>
+        </div>
+
+        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com">Ram Maheshwari</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
