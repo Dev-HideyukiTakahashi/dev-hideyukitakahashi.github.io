@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { name: 'Inicio', href: '#home' },
+  { name: 'Início', href: '#home' },
   { name: 'Sobre', href: '#about' },
+  { name: 'Skills', href: '#skills' },
   { name: 'Projetos', href: '#projects' },
   { name: 'Contato', href: '#contact' },
 ];
@@ -14,6 +15,8 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const [isActiveBorder, setIsActiveBorder] = useState(false);
+
+  const [activeLink, setActiveLink] = useState('#home');
 
   // Function to trigger the gold border effect
   const triggerBorder = () => {
@@ -60,8 +63,12 @@ export default function Header() {
               <motion.a
                 key={link.name}
                 href={link.href}
-                onClick={triggerBorder}
-                className="relative text-[13px] font-medium text-ivory-muted hover:text-gold transition-all duration-200 ease-in-out tracking-[0.15em] uppercase"
+                onClick={() => {
+                  triggerBorder();
+                  setActiveLink(link.href);
+                }}
+                className={`relative text-[13px] font-medium transition-all duration-200 ease-in-out tracking-[0.15em] uppercase
+                ${activeLink === link.href ? 'text-gold' : 'text-ivory-muted hover:text-gold'}`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i + 0.5 }}
