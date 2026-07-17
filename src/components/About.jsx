@@ -78,8 +78,8 @@ export default function About() {
             {/* Personal info */}
             <div className="flex flex-wrap gap-8">
               {[
-                { label: 'Localizacao', value: 'Diadema, SP' },
-                { label: 'Experiencia', value: 'Full Stack', hideMobile: true },
+                { label: 'Localização', value: 'Diadema, SP' },
+                { label: 'Experiência', value: 'Full Stack', hideMobile: true },
                 { label: 'Foco', value: 'Backend' },
               ].map(item => (
                 <div key={item.label} className={item.hideMobile ? 'hidden md:block' : ''}>

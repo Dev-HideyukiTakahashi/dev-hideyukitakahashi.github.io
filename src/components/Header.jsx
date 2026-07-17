@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { name: 'Início', href: '#home' },
   { name: 'Sobre', href: '#about' },
-  { name: 'Skills', href: '#skills' },
+  { name: 'Habilidades', href: '#skills' },
   { name: 'Projetos', href: '#projects' },
   { name: 'Contato', href: '#contact' },
 ];
@@ -32,9 +32,43 @@ export default function Header() {
     // Listen for custom trigger event from other components (e.g., Hero)
     window.addEventListener('triggerBorderEvent', triggerBorder);
 
+    // Observe sections to update active navigation link while scrolling
+    const sections = navLinks.map(link => document.querySelector(link.href)).filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Update active menu item based on the visible section
+            setActiveLink(`#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        // Trigger when around 40% of the section is visible
+        threshold: 0.1,
+
+        // Adjust for fixed header height
+        rootMargin: '-100px 0px -50% 0px',
+      },
+    );
+
+    sections.forEach(section => {
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('triggerBorderEvent', triggerBorder);
+
+      // Cleanup observer when component unmounts
+      sections.forEach(section => {
+        if (section) {
+          observer.unobserve(section);
+        }
+      });
     };
   }, []);
 

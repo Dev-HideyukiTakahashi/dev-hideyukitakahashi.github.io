@@ -1,6 +1,6 @@
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { GithubIcon, LinkedinIcon, WhatsAppIcon, MailIcon, ArrowUpRightIcon } from './Icons'
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { GithubIcon, LinkedinIcon, WhatsAppIcon, MailIcon, ArrowUpRightIcon } from './Icons';
 
 const contactLinks = [
   {
@@ -13,33 +13,34 @@ const contactLinks = [
   {
     icon: LinkedinIcon,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/hideyuki-takahashi',
-    href: 'https://www.linkedin.com/in/hideyuki-takahashi/',
+    value: 'linkedin.com/in/dev-hideyukitakahashi',
+    href: 'https://www.linkedin.com/in/dev-hideyukitakahashi/',
     color: 'hover:text-[#0A66C2]',
   },
   {
     icon: WhatsAppIcon,
     label: 'WhatsApp',
-    value: '+55 (11) 99999-9999',
-    href: 'https://wa.me/5511999999999',
+    value: '+55 (11) 94205-1849',
+    href: 'https://wa.me/5511942051849',
     color: 'hover:text-[#25D366]',
   },
   {
     icon: MailIcon,
     label: 'Email',
-    value: 'seu@email.com',
-    href: 'mailto:seu@email.com',
+    value: 'dev.hideyukitakahashi@gmail.com',
+    href: 'mailto:dev.hideyukitakahashi@gmail.com',
     color: 'hover:text-gold',
   },
-]
+];
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="contact" className="relative py-40 bg-charcoal/40" ref={ref}>
+    <section id="contact" className="relative py-20 bg-charcoal/40" ref={ref}>
       <div className="max-w-4xl mx-auto px-8 lg:px-16">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -53,11 +54,11 @@ export default function Contact() {
             Vamos Conversar
           </h2>
           <p className="text-ivory-muted mt-6 max-w-lg mx-auto text-[15px] leading-relaxed">
-            Estou sempre aberto a novos projetos e oportunidades.
-            Entre em contato!
+            Estou sempre aberto a novos projetos e oportunidades. Entre em contato!
           </p>
         </motion.div>
 
+        {/* Contact Grid */}
         <div className="grid sm:grid-cols-2 gap-6">
           {contactLinks.map((item, i) => (
             <motion.a
@@ -67,27 +68,44 @@ export default function Contact() {
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 + i * 0.1 }}
-              className={`group relative p-8 border border-white/5 hover:border-gold/20 transition-all duration-700 ${item.color}`}
-              whileHover={{ y: -4 }}
+              transition={{
+                opacity: { duration: 0.5 },
+                y: { duration: 0.5, delay: 0.2 + i * 0.1 },
+              }}
+              className={`group relative p-8 border border-white/5 hover:border-gold/20 transition-colors duration-200 ${item.color}`}
+              whileHover={{
+                y: -6,
+                transition: {
+                  duration: 0.15,
+                  ease: 'easeOut',
+                },
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
             >
-              <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              {/* Corner Icon */}
+              <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <ArrowUpRightIcon size={16} className="text-gold" />
               </div>
 
-              <item.icon size={24} className="text-ivory-muted group-hover:text-gold transition-colors duration-500 mb-6" />
+              {/* Main Icon */}
+              <item.icon
+                size={24}
+                className="text-ivory-muted group-hover:text-gold transition-colors duration-200 mb-6"
+              />
 
+              {/* Label */}
               <h3 className="text-[11px] text-gold tracking-[0.3em] uppercase mb-2 font-semibold">
                 {item.label}
               </h3>
 
-              <p className="text-ivory text-[15px] font-light">
-                {item.value}
-              </p>
+              {/* Contact Value */}
+              <p className="text-ivory text-[15px] font-light">{item.value}</p>
             </motion.a>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

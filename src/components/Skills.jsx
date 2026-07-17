@@ -3,15 +3,19 @@ import { useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
 
 const skills = [
+  'CSS',
+  'HTML',
+  'JavaScript',
+  'TypeScript',
+  'Java',
+  'Spring Boot',
+  'Node.js',
   'React',
   'Angular',
   'Tailwind CSS',
-  'JavaScript',
-  'TypeScript',
-  'Node.js',
-  'Java',
-  'Spring Boot',
+  'Bootstrap',
   'Docker',
+  'CI/CD',
   'Scrum',
   'Swagger',
   'Testes Unitários',
@@ -20,34 +24,42 @@ const skills = [
   'TDD',
   'APIs REST',
   'Microservices',
-  'Bancos Relacionais (MySQL, PostgreSQL)',
-  'Bancos Não Relacionais (MongoDB, Redis)',
+  'PostgreSQL',
+  'MongoDB',
+  'Redis',
   'Git',
   'Github',
   'Figma',
+  'UI/UX',
   'Clean Architecture',
+  'Clean Code',
   'SOLID',
   'IA Generativa (LLMs)',
+  'Linux',
+  'Trabalho em Equipe',
+  'Resolução de Problemas',
+  'Aprendizado Contínuo',
 ];
 
-// Mobile skills
-const essentialSkills = [
-  'React',
-  'Angular',
-  'JavaScript',
-  'TypeScript',
-  'Node.js',
+// Skills displayed on mobile devices
+const mobileSkills = [
+  'HTML',
+  'CSS',
   'Java',
   'Spring Boot',
-  'Docker',
+  'React',
+  'TypeScript',
+  'JavaScript',
+  'Node.js',
   'APIs REST',
-  'Microservices',
-  'Bancos Relacionais (MySQL, PostgreSQL)',
-  'Bancos Não Relacionais (MongoDB, Redis)',
+  'PostgreSQL',
+  'MongoDB',
+  'Docker',
   'Git',
-  'Figma',
-  'Clean Architecture',
+  'UI/UX',
+  'Testes Unitários',
   'SOLID',
+  'Trabalho em Equipe',
 ];
 
 export default function Skills() {
@@ -56,7 +68,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative w-full" ref={ref}>
-      <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-16 pt-8 md:pt-20 md:pb-37 2xl:pb-100">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-16 pt-8 md:pt-20 md:pb-23 2xl:pb-90">
         {/* Section header */}
         <div className="text-center mb-10">
           <span className="text-gold text-[11px] font-semibold tracking-[0.4em] uppercase">
@@ -85,7 +97,7 @@ export default function Skills() {
                 color: { duration: 0.2 },
               }}
               className={`px-6 py-3 text-[13px] font-medium text-ivory-muted tracking-wide border border-white/10 rounded-md cursor-default
-                ${!essentialSkills.includes(skill) ? 'hidden md:inline-block' : 'inline-block'}`}
+                ${!mobileSkills.includes(skill) ? 'hidden md:inline-block' : 'inline-block'}`}
             >
               {skill}
             </motion.span>
