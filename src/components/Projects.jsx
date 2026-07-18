@@ -42,6 +42,33 @@ const projects = [
   },
 ];
 
+const extraProjects = [
+  {
+    title: 'Todo',
+    description: 'Projeto em construção . . .',
+    tags: ['Todo', 'Todo'],
+    link: '#',
+  },
+  {
+    title: 'Todo',
+    description: 'Projeto em construção . . .',
+    tags: ['Todo', 'Todo'],
+    link: '#',
+  },
+  {
+    title: 'Todo',
+    description: 'Projeto em construção . . .',
+    tags: ['Todo', 'Todo'],
+    link: '#',
+  },
+  {
+    title: 'Todo',
+    description: 'Projeto em construção . . .',
+    tags: ['Todo', 'Todo'],
+    link: '#',
+  },
+];
+
 export default function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -207,6 +234,72 @@ export default function Projects() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* More Projects */}
+        <div className="mt-20">
+          <div className="text-center mb-14">
+            <span className="text-gold text-[11px] font-semibold tracking-[0.4em] uppercase">
+              Repositórios
+            </span>
+
+            <h3 className="font-playfair text-3xl md:text-4xl font-bold text-ivory mt-4">
+              Outros Projetos
+            </h3>
+
+            <p className="text-ivory-muted mt-4 max-w-xl mx-auto text-[15px]">
+              Alguns outros projetos desenvolvidos durante meus estudos.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {extraProjects.map(project => (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col h-full border border-white/5 hover:border-gold/20 
+                  p-6 transition-all duration-300"
+              >
+                {/* Title */}
+                <h4 className="text-xl font-semibold text-ivory group-hover:text-gold transition-colors duration-200">
+                  {project.title}
+                </h4>
+
+                {/* Description */}
+                <p className="text-sm text-ivory-muted mt-3 leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {project.tags.map(tag => (
+                    <span
+                      key={tag}
+                      className="text-[11px] text-gold border border-gold/20 px-2 py-1 rounded"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Spacer */}
+                <div className="flex-1" />
+
+                {/* Link */}
+                <div className="mt-6 flex items-center gap-2 text-gold/70 group-hover:text-gold transition-colors duration-200">
+                  <span className="relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 group-hover:after:w-full">
+                    Ver projeto
+                  </span>
+
+                  <ArrowUpRightIcon
+                    size={14}
+                    className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

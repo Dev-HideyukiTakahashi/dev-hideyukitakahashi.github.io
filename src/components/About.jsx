@@ -2,6 +2,8 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
 
+import profileImg from '../assets/profile.png';
+
 export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -30,19 +32,21 @@ export default function About() {
               <div className="absolute -inset-6 bg-linear-to-br from-gold/10 via-transparent to-gold/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
               {/* Profile placeholder */}
-              <div className="relative w-72 h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border border-gold/20 bg-linear-to-br from-slate-dark to-charcoal flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl font-playfair font-bold text-gold/30 mb-3">HT</div>
+              <div className="relative w-72 h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border border-gold/20 bg-linear-to-br from-slate-dark to-charcoal">
+                <img
+                  src={profileImg}
+                  alt="Hideyuki Takahashi"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  draggable={false}
+                />
 
-                  <p className="text-ivory-muted text-[10px] tracking-[0.3em] uppercase">
-                    Sua Foto
-                  </p>
-                </div>
+                {/* Soft overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/25 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Decorative circles */}
-              <div className="absolute -bottom-3 -right-3 w-24 h-24 border border-gold/10 rounded-full" />
-              <div className="absolute -top-3 -left-3 w-16 h-16 border border-gold/10 rounded-full" />
+              <div className="absolute -bottom-3 -right-3 w-24 h-24 border border-gold/10 rounded-full transition-all duration-500 group-hover:scale-105 group-hover:border-gold/30" />
+              <div className="absolute -top-3 -left-3 w-16 h-16 border border-gold/10 rounded-full transition-all duration-500 group-hover:scale-110 group-hover:border-gold/30" />
             </div>
           </motion.div>
 
