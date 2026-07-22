@@ -2,30 +2,13 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowUpRightIcon } from './Icons';
 
-import dentalCareImg from '../assets/projects/dental-care.png';
 import helpDeskImg from '../assets/projects/help-desk.png';
 
 const projects = [
   {
-    title: 'Dental Care',
-    description:
-      'O sistema permite que pacientes agendem, cancelem e avaliem consultas, dentistas gerenciem suas agendas e administradores controlem usuários e visualizem relatórios.',
-    tags: [
-      'Java',
-      'Spring Boot',
-      'Angular',
-      'Flyway',
-      'Swagger (OpenAPI)',
-      'PostgreSQL',
-      'Bootstrap 5',
-    ],
-    link: 'https://github.com/Dev-HideyukiTakahashi/dental-care',
-    image: dentalCareImg,
-  },
-  {
     title: 'Help-Desk',
     description:
-      'O sistema simula um Gerenciador de Chamados, permitindo que Administradores, Técnicos e Clientes interajam em um fluxo realista de abertura, acompanhamento e encerramento de chamados.',
+      'Sistema de gerenciador de chamados que simula o fluxo realista entre Administradores, Técnicos e Clientes para abertura, acompanhamento e encerramento de ocorrências.',
     tags: [
       'React',
       'Express',
@@ -40,31 +23,71 @@ const projects = [
     link: 'https://github.com/Dev-HideyukiTakahashi/help-desk-rocketseat',
     image: helpDeskImg,
   },
+  {
+    title: 'Dentify',
+    description:
+      'Sistema de gestão para clínicas odontológicas que centraliza o fluxo completo: agendamentos de pacientes, agenda de dentistas, prontuário, histórico clínico, pagamentos e indicadores administrativos.',
+    tags: [
+      'Java',
+      'Spring Boot',
+      'Angular',
+      'Angular Material',
+      'Flyway',
+      'Swagger (OpenAPI)',
+      'PostgreSQL',
+    ],
+    link: '#',
+    image: null,
+  },
+  {
+    title: 'StayVanilla',
+    description:
+      'Portal de reservas hoteleiras desenvolvido sem frameworks (Vanilla Node.js) para demonstrar domínio profundo dos fundamentos e manipulação nativa de DOM. Conta também com uma versão moderna utilizando Fastify e React.',
+    tags: ['Node.js (Vanilla)', 'node:test', 'SQLite', 'HTML5', 'CSS3', 'Javascript'],
+    link: '#',
+    image: null,
+  },
+  {
+    title: 'PetExpress',
+    description:
+      'E-commerce pet shop voltado para gestão de catálogo, controle de estoque, checkout com pagamento simulado e painel administrativo centralizado para acompanhar todo o ciclo de vendas.',
+    tags: ['NestJS', 'Typescript', 'Zod', 'PostgreSQL', 'React', 'Prisma', 'Redis', 'Docker'],
+    link: '#',
+    image: null,
+  },
+  {
+    title: 'Finora',
+    description:
+      'Aplicação de finanças pessoais para controle detalhado de receitas, despesas, cartões e metas. Centraliza lançamentos e categorizações para fornecer relatórios visuais precisos e inteligência orçamentária.',
+    tags: ['Fastify', 'Prisma', 'Zod', 'Swagger', 'PostgreSQL', 'React', 'Vitest', 'Tailwind CSS'],
+    link: '#',
+    image: null,
+  },
 ];
 
 const extraProjects = [
   {
-    title: 'Todo',
-    description: 'Projeto em construção . . .',
-    tags: ['Todo', 'Todo'],
+    title: 'CoreFlow',
+    description: 'Plataforma corporativa de gestão empresarial.',
+    tags: ['Fastify', 'API', 'RBAC'],
     link: '#',
   },
   {
-    title: 'Todo',
-    description: 'Projeto em construção . . .',
-    tags: ['Todo', 'Todo'],
+    title: 'StockFlow',
+    description: 'Catálogo de produtos e controle de estoque.',
+    tags: ['NestJS', 'JWT', 'Redis'],
     link: '#',
   },
   {
-    title: 'Todo',
-    description: 'Projeto em construção . . .',
-    tags: ['Todo', 'Todo'],
+    title: 'FinanceFlow',
+    description: 'Gestão financeira pessoal e empresarial.',
+    tags: ['Java', 'Spring Boot', 'Layered Arch'],
     link: '#',
   },
   {
-    title: 'Todo',
-    description: 'Projeto em construção . . .',
-    tags: ['Todo', 'Todo'],
+    title: 'NexusFlow',
+    description: 'Plataforma distribuída de pedidos.',
+    tags: ['Microservices', 'Express', 'RabbitMQ'],
     link: '#',
   },
 ];
@@ -109,40 +132,51 @@ export default function Projects() {
               transition={{ duration: 1, delay: 0.2 + i * 0.2 }}
             >
               <div className="grid lg:grid-cols-2 gap-14 items-center">
-                {/* Desktop image */}
+                {/* Desktop image / Placeholder */}
                 <div className={`${i % 2 !== 0 ? 'lg:order-2' : ''} hidden lg:block`}>
-                  <div className="group relative overflow-hidden rounded-sm aspect-video border border-white/5 transition-all duration-700 hover:border-gold/15">
+                  <div className="group relative overflow-hidden rounded-sm aspect-video border border-white/5 transition-all duration-700 hover:border-gold/15 bg-black/40">
                     {/* Image overlay */}
                     <div className="absolute inset-0 bg-linear-to-br from-gold/4 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700" />
 
-                    {/* Project image */}
-                    {project.image && (
+                    {project.image ? (
                       <img
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                       />
+                    ) : (
+                      /* Placeholder luxuoso */
+                      <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center border border-dashed border-white/10 group-hover:border-gold/30 transition-colors duration-500">
+                        <span className="font-playfair text-xl italic text-gold/60 mb-2">
+                          {project.title}
+                        </span>
+                        <span className="text-xs uppercase tracking-[0.2em] text-ivory-muted/60">
+                          Projeto em Construção . . .
+                        </span>
+                      </div>
                     )}
 
                     {/* Project link */}
-                    <div className="absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="pointer-events-auto inline-flex items-center gap-2 text-gold/80 hover:text-gold transition-colors duration-200 group/project"
-                      >
-                        <span className="relative">
-                          Ver projeto
-                          <span className="absolute left-0 -bottom-0.5 h-px w-0 bg-gold transition-all duration-300 group-hover/project:w-full" />
-                        </span>
+                    {project.link !== '#' && (
+                      <div className="absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="pointer-events-auto inline-flex items-center gap-2 text-gold/80 hover:text-gold transition-colors duration-200 group/project"
+                        >
+                          <span className="relative">
+                            Ver projeto
+                            <span className="absolute left-0 -bottom-0.5 h-px w-0 bg-gold transition-all duration-300 group-hover/project:w-full" />
+                          </span>
 
-                        <ArrowUpRightIcon
-                          size={14}
-                          className="transition-transform duration-200 group-hover/project:translate-x-1 group-hover/project:-translate-y-1"
-                        />
-                      </a>
-                    </div>
+                          <ArrowUpRightIcon
+                            size={14}
+                            className="transition-transform duration-200 group-hover/project:translate-x-1 group-hover/project:-translate-y-1"
+                          />
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -163,27 +197,36 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                  {/* Mobile image */}
-                  {project.image && (
-                    <div className="lg:hidden mb-8">
-                      <div className="relative overflow-hidden rounded-sm aspect-video border border-white/5">
-                        {/* Project image */}
+                  {/* Mobile image / Placeholder */}
+                  <div className="lg:hidden mb-8">
+                    <div className="relative overflow-hidden rounded-sm aspect-video border border-white/5 bg-black/40">
+                      {project.image ? (
                         <img
                           src={project.image}
                           alt={project.title}
                           className="w-full h-full object-contain"
                         />
+                      ) : (
+                        <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center border border-dashed border-white/10">
+                          <span className="font-playfair text-lg italic text-gold/60 mb-1">
+                            {project.title}
+                          </span>
+                          <span className="text-[10px] uppercase tracking-[0.2em] text-ivory-muted/60">
+                            Em Construção . . .
+                          </span>
+                        </div>
+                      )}
 
-                        {/* Project link */}
+                      {project.link !== '#' && (
                         <a
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="absolute inset-0"
                         />
-                      </div>
+                      )}
                     </div>
-                  )}
+                  </div>
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-3 mb-8">
@@ -214,22 +257,25 @@ export default function Projects() {
                       </motion.span>
                     ))}
                   </div>
-                  {/* Details link */}
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-gold/80 hover:text-gold transition-all duration-200"
-                  >
-                    <span className="relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full">
-                      Ver Detalhes
-                    </span>
 
-                    <ArrowUpRightIcon
-                      size={14}
-                      className="transition-transform duration-200 hover:translate-x-1 hover:-translate-y-1"
-                    />
-                  </a>
+                  {/* Details link */}
+                  {project.link !== '#' && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-gold/80 hover:text-gold transition-all duration-200"
+                    >
+                      <span className="relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full">
+                        Ver Detalhes
+                      </span>
+
+                      <ArrowUpRightIcon
+                        size={14}
+                        className="transition-transform duration-200 hover:translate-x-1 hover:-translate-y-1"
+                      />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -248,21 +294,23 @@ export default function Projects() {
             </h3>
 
             <p className="text-ivory-muted mt-4 max-w-xl mx-auto text-[15px]">
-              Alguns outros projetos desenvolvidos durante meus estudos.
+              Projetos pessoais explorando backend, APIs e arquitetura de sistemas.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
             {extraProjects.map(project => (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col h-full border border-white/5 hover:border-gold/20 
-                  p-6 transition-all duration-300"
+              <div
+                key={project.title}
+                className="group relative flex flex-col h-full border border-white/5 hover:border-gold/20 p-6 transition-all duration-300 bg-black/20 overflow-hidden"
               >
+                {/* Indicador sutil de Em Construção no topo do card */}
+                <div className="absolute top-0 right-0 bg-gold/10 text-gold text-[9px] tracking-widest uppercase px-3 py-1 border-b border-l border-gold/15 font-medium">
+                  Em Construção
+                </div>
+
                 {/* Title */}
-                <h4 className="text-xl font-semibold text-ivory group-hover:text-gold transition-colors duration-200">
+                <h4 className="text-xl font-semibold text-ivory group-hover:text-gold transition-colors duration-200 mt-2">
                   {project.title}
                 </h4>
 
@@ -271,7 +319,7 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                {/* Tags */}
+                {/* Tags (Exatamente 3) */}
                 <div className="flex flex-wrap gap-2 mt-6">
                   {project.tags.map(tag => (
                     <span
@@ -286,8 +334,8 @@ export default function Projects() {
                 {/* Spacer */}
                 <div className="flex-1" />
 
-                {/* Link */}
-                <div className="mt-6 flex items-center gap-2 text-gold/70 group-hover:text-gold transition-colors duration-200">
+                {/* Link (Não redireciona, mantido visualmente) */}
+                <div className="mt-6 flex items-center gap-2 text-gold/70 group-hover:text-gold transition-colors duration-200 cursor-pointer">
                   <span className="relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-gold after:transition-all after:duration-300 group-hover:after:w-full">
                     Ver projeto
                   </span>
@@ -297,7 +345,7 @@ export default function Projects() {
                     className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
                   />
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>

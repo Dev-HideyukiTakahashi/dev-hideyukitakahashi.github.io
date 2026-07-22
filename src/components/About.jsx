@@ -41,7 +41,7 @@ export default function About() {
                 />
 
                 {/* Soft overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/25 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-t from-obsidian/25 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Decorative circles */}
@@ -66,13 +66,13 @@ export default function About() {
             {/* Description */}
             <div className="space-y-6 mb-4">
               <p className="text-ivory-muted leading-[1.9] text-[15px]">
-                Sou Hideyuki Takahashi, desenvolvedor Full Stack. Formado em Análise de Sistemas e
-                com MBA em Full Stack, foco em backend e arquitetura de aplicações escaláveis.
+                Sou Hideyuki Takahashi, desenvolvedor Full Stack especializado em criação de
+                aplicações web, com formação em Análise de Sistemas e MBA em Full Stack Developer.
               </p>
 
               <p className="text-ivory-muted leading-[1.9] text-[15px]">
-                Busco evolução técnica contínua por meio de bootcamps e certificações, aplicando
-                sempre as melhores práticas de mercado.
+                Em constante evolução através de estudos, bootcamps e certificações, acompanhando as
+                novas tecnologias e boas práticas do mercado.
               </p>
             </div>
 
