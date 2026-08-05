@@ -1,0 +1,62 @@
+/* ============================================================
+   NOTNULL SYSTEMS
+   PORTFÓLIO PESSOAL — HIDEYUKI TAKAHASHI
+
+   Arquivo: accessibility.css
+   Responsabilidade:
+   - Foco por teclado
+   - Preferência por menos movimento
+   - Contraste e interação
+   ============================================================ */
+
+/* ============================================================
+   FOCO VISÍVEL
+   ============================================================ */
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 1px solid rgba(232, 212, 139, 0.9);
+  outline-offset: 4px;
+}
+
+.portfolio-hero__social:focus-visible {
+  border-color: rgba(232, 212, 139, 0.8);
+
+  box-shadow:
+    0 0 0 3px rgba(201, 168, 76, 0.12),
+    0 0 24px rgba(168, 85, 247, 0.18);
+}
+
+/* ============================================================
+   REDUÇÃO DE MOVIMENTO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   ALTO CONTRASTE
+   ============================================================ */
+
+@media (prefers-contrast: more) {
+  .portfolio-hero__social,
+  .portfolio-hero__floating,
+  .portfolio-hero__bottom-card {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}

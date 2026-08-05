@@ -1,0 +1,149 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   NOTNULL SYSTEMS
+   PORTFÓLIO PESSOAL — HIDEYUKI TAKAHASHI
+
+   Arquivo: globals.css
+   Responsabilidade:
+   - Tema global
+   - Reset estrutural
+   - Tipografia
+   - Scrollbar
+   - Seleção
+   - Elementos interativos
+   ============================================================ */
+
+@theme {
+  /* ========== CORES DA MARCA ========== */
+
+  --color-gold: #c9a84c;
+  --color-gold-light: #e8d48b;
+  --color-gold-dark: #a07e2e;
+
+  --color-obsidian: #08080d;
+  --color-charcoal: #0f0f16;
+
+  --color-slate-dark: #16161f;
+  --color-slate-mid: #1e1e2a;
+  --color-slate-light: #282836;
+
+  --color-ivory: #f0ebe0;
+  --color-ivory-muted: #9a9490;
+
+  /* ========== TIPOGRAFIA ========== */
+
+  --font-playfair: 'Playfair Display', serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+/* ============================================================
+   DOCUMENTO
+   ============================================================ */
+
+html {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: var(--color-obsidian);
+}
+
+body {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+
+  background-color: var(--color-obsidian);
+  color: var(--color-ivory);
+
+  font-family: var(--font-inter);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+/* ============================================================
+   ELEMENTOS BÁSICOS
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ============================================================
+   ELEMENTOS INTERATIVOS
+   ============================================================ */
+
+a[href],
+button:not(:disabled),
+[role='button']:not([aria-disabled='true']) {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled='true'] {
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: var(--color-gold);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-light);
+}
+
+/* ============================================================
+   SELEÇÃO
+   ============================================================ */
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-obsidian);
+}
