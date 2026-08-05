@@ -15,10 +15,6 @@ export default function HeroCopy() {
         <span className="hero-title-secondary">Takahashi</span>
       </h1>
 
-      <div className="hero-badges">
-        <span className="hero-badge hero-badge-highlight">Fundador da NotNull Systems</span>
-      </div>
-
       <div className="hero-description">
         {heroDescription.map(text => (
           <p key={text}>{text}</p>

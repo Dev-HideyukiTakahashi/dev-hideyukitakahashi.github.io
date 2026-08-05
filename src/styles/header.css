@@ -1,0 +1,615 @@
+/* ============================================================
+   NOTNULL SYSTEMS
+   PORTFÓLIO PESSOAL — HIDEYUKI TAKAHASHI
+
+   Arquivo: header.css
+
+   Responsabilidade:
+   - Navegação principal
+   - Identidade visual do Header
+   - Navegação ativa
+   - Menu mobile
+   - Responsividade
+   ============================================================ */
+
+/* ============================================================
+   HEADER — BASE
+   ============================================================ */
+
+.portfolio-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+
+  isolation: isolate;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+
+  background: rgba(5, 4, 9, 0.58);
+
+  transition:
+    background-color 500ms ease,
+    border-color 500ms ease,
+    box-shadow 500ms ease,
+    backdrop-filter 500ms ease;
+
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.portfolio-header--scrolled {
+  border-bottom-color: rgba(159, 92, 247, 0.1);
+
+  background: rgba(5, 4, 9, 0.82);
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.18),
+    0 1px 0 rgba(255, 255, 255, 0.015) inset;
+
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+.portfolio-header--active-border {
+  border-bottom-color: rgba(212, 175, 55, 0.3);
+}
+
+/* ============================================================
+   LUZ AMBIENTAL
+   ============================================================ */
+
+.portfolio-header__ambient {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  z-index: -1;
+
+  width: min(760px, 70vw);
+  height: 130px;
+
+  transform: translateX(-50%);
+
+  border-radius: 9999px;
+
+  background: rgba(116, 54, 190, 0.12);
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.portfolio-header__container {
+  display: grid;
+  grid-template-columns:
+    minmax(120px, auto)
+    minmax(0, 1fr)
+    minmax(120px, auto);
+
+  width: 100%;
+  max-width: 1440px;
+  min-height: 72px;
+
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  align-items: center;
+}
+
+/* ============================================================
+   IDENTIDADE
+   ============================================================ */
+
+.portfolio-header__brand,
+.portfolio-header__closing-brand {
+  display: inline-flex;
+  width: fit-content;
+
+  align-items: center;
+
+  font-family: var(--font-playfair);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  color: var(--color-ivory);
+}
+
+.portfolio-header__brand {
+  position: relative;
+  gap: 1px;
+
+  transition:
+    color 300ms ease,
+    filter 300ms ease;
+}
+
+.portfolio-header__brand:hover {
+  color: #ffffff;
+
+  filter: drop-shadow(0 0 12px rgba(159, 92, 247, 0.18));
+}
+
+.portfolio-header__brand-symbol {
+  color: var(--color-gold);
+
+  transition:
+    color 300ms ease,
+    text-shadow 300ms ease;
+}
+
+.portfolio-header__brand:hover .portfolio-header__brand-symbol {
+  color: var(--color-gold-light);
+
+  text-shadow: 0 0 14px rgba(212, 175, 55, 0.24);
+}
+
+.portfolio-header__brand-name {
+  color: inherit;
+}
+
+.portfolio-header__closing-brand {
+  justify-self: end;
+
+  opacity: 0.8;
+}
+
+/* ============================================================
+   NAVEGAÇÃO DESKTOP
+   ============================================================ */
+
+.portfolio-header__navigation {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(1.75rem, 3.4vw, 3.4rem);
+}
+
+.portfolio-header__link {
+  position: relative;
+
+  display: inline-flex;
+  padding-block: 0.75rem;
+
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(240, 235, 224, 0.55);
+
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+
+  transition:
+    color 300ms ease,
+    text-shadow 300ms ease;
+}
+
+.portfolio-header__link:hover {
+  color: rgba(240, 235, 224, 0.92);
+}
+
+.portfolio-header__link--active {
+  color: var(--color-gold-light);
+
+  text-shadow: 0 0 18px rgba(212, 175, 55, 0.14);
+}
+
+.portfolio-header__link-line {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+
+  height: 1px;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.9), transparent);
+
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.34);
+
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 350ms ease;
+}
+
+.portfolio-header__link:hover .portfolio-header__link-line,
+.portfolio-header__link--active .portfolio-header__link-line {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   ÁREA DIREITA
+   ============================================================ */
+
+.portfolio-header__right {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 1rem;
+}
+
+/* ============================================================
+   BOTÃO MOBILE
+   ============================================================ */
+
+.portfolio-header__mobile-button {
+  position: relative;
+
+  display: none;
+  width: 42px;
+  height: 42px;
+
+  overflow: hidden;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(240, 235, 224, 0.68);
+
+  transition:
+    color 300ms ease,
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.portfolio-header__mobile-button:hover,
+.portfolio-header__mobile-button--active {
+  border-color: rgba(159, 92, 247, 0.28);
+
+  background: rgba(159, 92, 247, 0.055);
+  color: var(--color-gold-light);
+
+  box-shadow: 0 0 24px rgba(116, 54, 190, 0.12);
+}
+
+.portfolio-header__mobile-button-glow {
+  position: absolute;
+  inset: 7px;
+
+  border-radius: inherit;
+
+  background: rgba(159, 92, 247, 0.12);
+
+  opacity: 0;
+
+  filter: blur(8px);
+
+  transition: opacity 300ms ease;
+}
+
+.portfolio-header__mobile-button--active .portfolio-header__mobile-button-glow {
+  opacity: 1;
+}
+
+/* ============================================================
+   MENU MOBILE
+   ============================================================ */
+
+.portfolio-header__mobile-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+
+  overflow: hidden;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.035);
+  border-bottom: 1px solid rgba(159, 92, 247, 0.1);
+
+  background: rgba(5, 4, 9, 0.94);
+
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+
+  -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(28px);
+}
+
+.portfolio-header__mobile-menu-background {
+  position: absolute;
+  top: -130px;
+  left: 50%;
+
+  width: 380px;
+  height: 260px;
+
+  transform: translateX(-50%);
+
+  border-radius: 9999px;
+
+  background: rgba(106, 41, 179, 0.15);
+
+  filter: blur(85px);
+
+  pointer-events: none;
+}
+
+.portfolio-header__mobile-navigation {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  padding: 1.2rem 1.25rem 1rem;
+
+  flex-direction: column;
+}
+
+.portfolio-header__mobile-link {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 36px auto 1fr;
+
+  min-height: 55px;
+
+  align-items: center;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+
+  color: rgba(240, 235, 224, 0.55);
+
+  transition:
+    color 300ms ease,
+    padding-left 300ms ease;
+}
+
+.portfolio-header__mobile-link:last-child {
+  border-bottom: 0;
+}
+
+.portfolio-header__mobile-link:hover,
+.portfolio-header__mobile-link--active {
+  padding-left: 4px;
+
+  color: var(--color-ivory);
+}
+
+.portfolio-header__mobile-link-number {
+  color: rgba(159, 92, 247, 0.48);
+
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+}
+
+.portfolio-header__mobile-link-name {
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.portfolio-header__mobile-link-line {
+  height: 1px;
+
+  margin-left: 1rem;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  background: linear-gradient(90deg, rgba(159, 92, 247, 0.68), transparent);
+
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.portfolio-header__mobile-link:hover .portfolio-header__mobile-link-line,
+.portfolio-header__mobile-link--active .portfolio-header__mobile-link-line {
+  transform: scaleX(1);
+}
+
+.portfolio-header__mobile-footer {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  padding: 0.9rem 1.25rem 1.2rem;
+
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.035);
+
+  color: rgba(240, 235, 224, 0.22);
+
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.portfolio-header__mobile-footer-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.portfolio-header__mobile-footer-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 9999px;
+
+  background: #49db9c;
+
+  box-shadow: 0 0 9px rgba(73, 219, 156, 0.65);
+}
+
+/* ============================================================
+   LINHA INFERIOR
+   ============================================================ */
+
+.portfolio-header__border {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+
+  height: 1px;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.portfolio-header__border-light {
+  position: absolute;
+  top: 0;
+  left: -30%;
+
+  width: 30%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(159, 92, 247, 0.65),
+    rgba(212, 175, 55, 0.58),
+    transparent
+  );
+
+  opacity: 0.42;
+
+  animation: portfolio-header-border-scan 8s linear infinite;
+}
+
+/* ============================================================
+   ANIMAÇÕES
+   ============================================================ */
+
+@keyframes portfolio-header-status-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+
+    transform: scale(0.88);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.18);
+  }
+}
+
+@keyframes portfolio-header-border-scan {
+  from {
+    left: -30%;
+  }
+
+  to {
+    left: 110%;
+  }
+}
+
+/* ============================================================
+   NOTEBOOKS MENORES
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .portfolio-header__container {
+    grid-template-columns:
+      minmax(105px, auto)
+      minmax(0, 1fr)
+      minmax(105px, auto);
+
+    min-height: 68px;
+
+    padding-inline: 1.5rem;
+  }
+
+  .portfolio-header__navigation {
+    gap: 1.7rem;
+  }
+
+  .portfolio-header__link {
+    font-size: 0.64rem;
+    letter-spacing: 0.15em;
+  }
+
+  .portfolio-header__brand,
+  .portfolio-header__closing-brand {
+    font-size: 1.1rem;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .portfolio-header__container {
+    grid-template-columns: 1fr auto;
+
+    min-height: 64px;
+
+    padding-inline: 1.25rem;
+  }
+
+  .portfolio-header__navigation,
+  .portfolio-header__closing-brand {
+    display: none;
+  }
+
+  .portfolio-header__brand {
+    font-size: 1.12rem;
+  }
+
+  .portfolio-header__brand-status {
+    margin-left: 7px;
+  }
+
+  .portfolio-header__mobile-button {
+    display: flex;
+  }
+}
+
+/* ============================================================
+   MOBILE PEQUENO
+   ============================================================ */
+
+@media (max-width: 390px) {
+  .portfolio-header__container {
+    min-height: 60px;
+
+    padding-inline: 1rem;
+  }
+
+  .portfolio-header__brand {
+    font-size: 1.04rem;
+  }
+
+  .portfolio-header__mobile-button {
+    width: 39px;
+    height: 39px;
+  }
+}
+
+/* ============================================================
+   ACESSIBILIDADE
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-header__brand-status-dot,
+  .portfolio-header__border-light {
+    animation: none !important;
+  }
+}

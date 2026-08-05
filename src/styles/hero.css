@@ -110,13 +110,20 @@
   font-weight: 700;
 }
 
+.hero-title-primary,
+.hero-title-secondary {
+  will-change: color, text-shadow, filter;
+}
+
 .hero-title-primary {
   color: #f3efe8;
+  animation: heroTitlePrimaryShift 8s ease-in-out infinite;
 }
 
 .hero-title-secondary {
   color: #d6ab3b;
   font-style: italic;
+  animation: heroTitleSecondaryShift 8s ease-in-out infinite;
 }
 
 .hero-badges {
@@ -136,15 +143,6 @@
   font-size: 0.82rem;
   line-height: 1;
   backdrop-filter: blur(12px);
-}
-
-.hero-badge-highlight::before {
-  content: '';
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 999px;
-  background: #9d5cff;
-  box-shadow: 0 0 14px rgba(157, 92, 255, 0.95);
 }
 
 .hero-description {
@@ -469,6 +467,50 @@
 /* ANIMAÇÕES */
 /* ============================================================ */
 
+/* Hideyuki: branco → dourado → branco */
+@keyframes heroTitlePrimaryShift {
+  0%,
+  36%,
+  100% {
+    color: #f3efe8;
+    text-shadow:
+      0 0 0 transparent,
+      0 12px 40px rgba(255, 255, 255, 0.025);
+    filter: drop-shadow(0 0 0 transparent);
+  }
+
+  52%,
+  72% {
+    color: #d6ab3b;
+    text-shadow:
+      0 0 20px rgba(214, 171, 59, 0.09),
+      0 12px 42px rgba(214, 171, 59, 0.05);
+    filter: drop-shadow(0 0 12px rgba(214, 171, 59, 0.055));
+  }
+}
+
+/* Takahashi: dourado → branco → dourado */
+@keyframes heroTitleSecondaryShift {
+  0%,
+  36%,
+  100% {
+    color: #d6ab3b;
+    text-shadow:
+      0 0 20px rgba(214, 171, 59, 0.09),
+      0 12px 42px rgba(214, 171, 59, 0.05);
+    filter: drop-shadow(0 0 12px rgba(214, 171, 59, 0.055));
+  }
+
+  52%,
+  72% {
+    color: #f3efe8;
+    text-shadow:
+      0 0 0 transparent,
+      0 12px 40px rgba(255, 255, 255, 0.025);
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
 @keyframes heroCircuitFlow {
   0% {
     opacity: 0.35;
@@ -684,5 +726,32 @@
   .hero-cpu-circuit-bottom,
   .hero-cpu-circuit-left {
     display: none;
+  }
+}
+
+/* ============================================================ */
+/* ACESSIBILIDADE — REDUÇÃO DE MOVIMENTO */
+/* ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-primary,
+  .hero-title-secondary,
+  .hero-cpu-circuit,
+  .hero-status-orb,
+  .hero-status-orb::before,
+  .hero-status-orb::after {
+    animation: none !important;
+  }
+
+  .hero-title-primary {
+    color: #f3efe8;
+    text-shadow: none;
+    filter: none;
+  }
+
+  .hero-title-secondary {
+    color: #d6ab3b;
+    text-shadow: none;
+    filter: none;
   }
 }
