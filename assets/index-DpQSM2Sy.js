@@ -103,7 +103,7 @@ Error generating stack: `+e.message+`
             pt-6
             text-center
             sm:flex-row sm:text-left
-          `,children:[(0,H.jsxs)(`div`,{children:[(0,H.jsx)(`span`,{className:`block text-[8px] font-medium uppercase tracking-[0.26em] text-gold/45`,children:`NotNull Systems`}),(0,H.jsx)(`p`,{className:`mt-2 text-xs font-light text-white/27`,children:`Tecnologia construída com clareza, estabilidade e precisão.`})]}),(0,H.jsxs)(`a`,{href:`#home`,"aria-label":`Voltar ao início`,className:`
+          `,children:[(0,H.jsxs)(`div`,{children:[(0,H.jsx)(`span`,{className:`block text-[8px] font-medium uppercase tracking-[0.26em] text-gold/45`,children:`NotNull Systems`}),(0,H.jsx)(`p`,{className:`mt-2 text-xs font-light text-white/27`,children:`Tecnologia construída com integridade, estabilidade e precisão.`})]}),(0,H.jsxs)(`a`,{href:`#home`,"aria-label":`Voltar ao início`,className:`
               group inline-flex items-center gap-3
               text-[8px] font-medium uppercase
               tracking-[0.24em]
