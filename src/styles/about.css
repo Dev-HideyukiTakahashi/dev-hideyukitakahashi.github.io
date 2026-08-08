@@ -834,6 +834,10 @@
     scroll-margin-top: 64px;
   }
 
+  .about-visual__image {
+    display: none !important;
+  }
+
   .about-section__container {
     padding: 4.75rem 1.25rem 3rem;
   }

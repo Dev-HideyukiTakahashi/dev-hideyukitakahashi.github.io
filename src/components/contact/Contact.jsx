@@ -231,7 +231,7 @@ export default function Contact() {
             </span>
 
             <p className="mt-2 text-xs font-light text-white/27">
-              Tecnologia construída com clareza, estabilidade e precisão.
+              Tecnologia construída com integridade, estabilidade e precisão.
             </p>
           </div>
 
